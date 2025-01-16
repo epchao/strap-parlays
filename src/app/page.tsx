@@ -15,7 +15,7 @@ export default function Home() {
 
       HARD CODE EVERYTHING FOR NOW.
       */}
-      <p>content</p>
+      <p>content 1</p>
 
       {/* Player display section */}
       {/* 
