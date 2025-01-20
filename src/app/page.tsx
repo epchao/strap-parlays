@@ -1,6 +1,9 @@
+import Pd from "./_components/playerDisplay/Pd";
+import PlayerDisplay from "./_components/playerDisplay/PlayerDisplay";
+
 export default function Home() {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center">
       {/* 
       Steps to create a new component:
       1. navigate to ./src/app/_components directory
@@ -15,7 +18,6 @@ export default function Home() {
 
       HARD CODE EVERYTHING FOR NOW.
       */}
-      <p>content</p>
 
       {/* Player display section */}
       {/* 
@@ -26,7 +28,7 @@ export default function Home() {
       Rank of player
       Game metadata
       */}
-
+      <PlayerDisplay />
       {/* Player Card Section */}
       {/* Only 3 cards in one row, descending afterwards and if i reduce my tab width all the way,
       it should conform to one card per row.
@@ -45,14 +47,13 @@ export default function Home() {
 
       {/* Submit Bet Section */}
       {/* Create a form that shows the following inputs
-      * entry fee
-      * to win amount (which is not editable; static for now, later we will make it dynamic based on
-      * bets made)
-      * 
-      * show the balance of the user
-      * submit bet button to submit the form
-      */}
-
+       * entry fee
+       * to win amount (which is not editable; static for now, later we will make it dynamic based on
+       * bets made)
+       *
+       * show the balance of the user
+       * submit bet button to submit the form
+       */}
     </div>
   );
 }
