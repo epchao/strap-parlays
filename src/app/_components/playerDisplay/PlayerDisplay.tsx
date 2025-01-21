@@ -14,9 +14,9 @@ const PlayerDisplay: React.FC = () => {
   return (
     <>
       {/* Main Container */}
-      <main className="flex flex-col items-center gap-2 p-2 bg-green-500 h-auto w-[95dvw] rounded-3xl lg:h-[80dvh] lg:flex-row lg:p-8 lg:gap-8">
+      <main className="flex flex-col items-center gap-2 p-2 bg-green-500 h-auto w-[95dvw] rounded-3xl lg:flex-row lg:p-8 lg:gap-8">
         {/* Player info container */}
-        <section className="flex flex-col items-center bg-neutral-400 h-auto w-full rounded-3xl sm:flex-row sm:justify-evenly lg:flex-col lg:h-full lg:w-2/6">
+        <section className="flex flex-col items-center bg-neutral-400 h-auto w-full rounded-3xl sm:flex-row sm:justify-evenly lg:flex-col lg:h-[40rem] lg:w-2/6">
           {/* Player icon */}
           <div className="flex items-center gap-2 p-4 lg:p-0 lg:pt-8">
             <img src={playerIcon} className="h-16 rounded-lg"></img>
@@ -45,16 +45,16 @@ const PlayerDisplay: React.FC = () => {
           </div>
         </section>
         {/* Champ Image + Game Meta Data Container */}
-        <section className="h-auto w-[100%] lg:h-full lg:w-4/6 bg-neutral-400 rounded-3xl pb-2">
+        <section className="bg-neutral-400 rounded-3xl h-auto w-[100%] lg:h-[40rem] lg:w-4/6 lg:flex lg:flex-col">
           {/* Champ Image */}
-          <div className="h-24 lg:h-1/4">
+          <div className="flex-1 h-24 lg:h-48">
             <img
               src={championImg}
               className="object-cover h-full w-full rounded-t-3xl"
             ></img>
           </div>
           {/* Game data */}
-          <div className="flex flex-col text-center text-xs lg:h-3/4">
+          <div className="flex-1 flex flex-col text-center text-xs lg:auto">
             {/* Time */}
             <div className="bg-black p-1 sm:text-sm lg:text-base">
               <p>Game Time : 19:00</p>
