@@ -1,4 +1,3 @@
-import Pd from "./_components/playerDisplay/Pd";
 import PlayerDisplay from "./_components/playerDisplay/PlayerDisplay";
 
 export default function Home() {
