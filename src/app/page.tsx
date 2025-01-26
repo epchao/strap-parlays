@@ -1,3 +1,5 @@
+import SubmitBet from "./_components/SubmitBet/SubmitBet";
+
 export default function Home() {
   return (
     <div className="flex justify-center">
@@ -15,7 +17,7 @@ export default function Home() {
 
       HARD CODE EVERYTHING FOR NOW.
       */}
-      <p>content 1</p>
+
 
       {/* Player display section */}
       {/* 
@@ -52,7 +54,7 @@ export default function Home() {
       * show the balance of the user
       * submit bet button to submit the form
       */}
-
+      <SubmitBet />
     </div>
   );
 }
