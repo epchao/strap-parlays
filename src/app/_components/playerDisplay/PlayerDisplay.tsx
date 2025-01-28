@@ -1,15 +1,16 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { Player, players } from "./mockPlayerData";
+
 const PlayerDisplay: React.FC = () => {
-  const championImg: string =
-    "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg";
-
-  const rank: string = "Challenger";
-  const rankImage: string =
-    "https://cdn3.emoji.gg/emojis/2370-lol-border9-challenger.png";
-
-  const playerName: string = "beerman562";
-  const playerLevel: number = 1000;
-  const playerIcon: string =
-    "https://static.bigbrain.gg/assets/lol/riot_static/14.24.1/img/profileicon/1439.png";
+  // Pretend call to API...
+  const [time, setTime] = useState("00:00");
+  const currentPlayer: Player = players[0];
+  // Updates to game time state
+  useEffect(() => {
+    setTime("19:00");
+  }, []);
 
   return (
     <>
@@ -19,10 +20,12 @@ const PlayerDisplay: React.FC = () => {
         <section className="flex flex-col items-center bg-neutral-400 h-auto w-full rounded-3xl sm:flex-row sm:justify-evenly lg:flex-col lg:h-[40rem] lg:w-2/6">
           {/* Player icon */}
           <div className="flex items-center gap-2 p-4 lg:p-0 lg:pt-8">
-            <img src={playerIcon} className="h-16 rounded-lg"></img>
+            <img src={currentPlayer.icon} className="h-16 rounded-lg"></img>
             <div className="flex flex-col">
-              <p>{playerName} #NA1</p>
-              <p className="text-xs">Level {playerLevel}</p>
+              <p>
+                {currentPlayer.name} #{currentPlayer.tag}
+              </p>
+              <p className="text-xs">Level {currentPlayer.level}</p>
             </div>
           </div>
           {/* Player ranks */}
@@ -30,16 +33,22 @@ const PlayerDisplay: React.FC = () => {
             <div className="text-xs sm:text-sm flex flex-col items-center lg:text-base lg:w-full">
               <p className="lg:bg-gray-800 lg:w-full lg:p-4">Solo/Duo</p>
               <div className="lg:flex lg:flex-col lg:justify-center">
-                <img src={rankImage} className="m-4 h-12 lg:h-16"></img>
-                <p>Challenger</p>
+                <img
+                  src={currentPlayer.sdRankImage}
+                  className="m-4 h-12 lg:h-16"
+                ></img>
+                <p>{currentPlayer.sdRank}</p>
               </div>
             </div>
             <div className="bg-white h-28 w-[1px] lg:hidden"></div>
             <div className="text-xs sm:text-sm flex flex-col items-center lg:text-base lg:w-full">
               <p className="lg:bg-gray-800 lg:w-full lg:p-4">Flex</p>
               <div className="lg:flex lg:flex-col lg:justify-center">
-                <img src={rankImage} className="m-4 h-12 lg:h-16"></img>
-                <p>{rank}</p>
+                <img
+                  src={currentPlayer.fRankImage}
+                  className="m-4 h-12 lg:h-16"
+                ></img>
+                <p>{currentPlayer.fRank}</p>
               </div>
             </div>
           </div>
@@ -49,7 +58,7 @@ const PlayerDisplay: React.FC = () => {
           {/* Champ Image */}
           <div className="flex-1 h-24 lg:h-48">
             <img
-              src={championImg}
+              src={currentPlayer.championImage}
               className="object-cover h-full w-full rounded-t-3xl"
             ></img>
           </div>
@@ -57,7 +66,7 @@ const PlayerDisplay: React.FC = () => {
           <div className="flex-1 flex flex-col text-center text-xs lg:auto">
             {/* Time */}
             <div className="bg-black p-1 sm:text-sm lg:text-base">
-              <p>Game Time : 19:00</p>
+              <p>Game Time : {time}</p>
             </div>
             {/* Blue Team Table */}
             <div className="bg-blue-400 p-1 sm:text-sm lg:text-base">
@@ -69,46 +78,23 @@ const PlayerDisplay: React.FC = () => {
                   <th>Player</th>
                   <th>Champion</th>
                   <th>Avg KDA</th>
-                  <th>Avg CS</th>
+                  <th>Avg CS/min</th>
                   <th>Rank</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-700">
-                <tr>
-                  <td>beerman562</td>
-                  <td>Warwick</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 2</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 3</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 4</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 5</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
+                {/* Populate table */}
+                {players.slice(0, 5).map((player, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{player.name}</td>
+                      <td>{player.champion}</td>
+                      <td>{player.avgKda.toFixed(2)}</td>
+                      <td>{player.avgCs.toFixed(2)}</td>
+                      <td>{player.sdRank}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
             {/* Red Team Table */}
@@ -126,41 +112,18 @@ const PlayerDisplay: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-700">
-                <tr>
-                  <td>Player 1</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 2</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 3</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 4</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
-                <tr>
-                  <td>Player 5</td>
-                  <td>Nunu</td>
-                  <td>3.25</td>
-                  <td>120</td>
-                  <td>Challenger</td>
-                </tr>
+                {/* Populate table */}
+                {players.slice(5, 10).map((player, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{player.name}</td>
+                      <td>{player.champion}</td>
+                      <td>{player.avgKda.toFixed(2)}</td>
+                      <td>{player.avgCs.toFixed(2)}</td>
+                      <td>{player.sdRank}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
