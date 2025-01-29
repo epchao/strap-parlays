@@ -1,4 +1,3 @@
-import StatCard from "./_components/betSelection/StatCard";
 import StatCardSection from "./_components/betSelection/StatCardSection";
 
 const statdata = [

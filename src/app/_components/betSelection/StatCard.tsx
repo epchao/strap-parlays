@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 interface StatCardProps {
     playerName: string;
@@ -21,10 +22,12 @@ const StatCard: React.FC<StatCardProps> = ({playerName, betType, betStat, player
     return (
         <div className="relative p-10 bg-gray-700 text-white rounded shadow-md w-58 h-80 flex flex-col align-center justify-center flex-grow-0">
             {/* Player info */}
-            <img 
+            <Image 
             src={playerImage} 
             alt={playerName} 
-            className="w-32 h-32 rounded-full mb-4 mx-auto" 
+            width={128}
+            height={128}
+            className="rounded-full mb-4 mx-auto" 
             />
             <h2 className="text-xl font-bold flex justify-center item-center mb-2">{playerName}</h2>
             
