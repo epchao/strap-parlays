@@ -1,17 +1,12 @@
 "use client";
-// this pulls from the react library to use the useState function
 import { useState } from "react";
-// this is the component that holds the entire function to export onto the page.tsx
-export default function SubmitBet() {
-  // useState is like a variable that holds onto states that changes (i.e. the input changes so it holds onto the new input) "initial state, new state" the useState parameters set it to 0
-  const [betAmt, setAmt] = useState(0);
-  //   variable
-  const balance: number = 200;
-  //   updateInput handles the onChange of input, whenever something is typed inside. "const 'name of function' = (parameter) => {update function for initial state}"
-  // how things happen in order: updateInput is an event listener, when there is a change, turns on onChange, updates the state/value
+
+interface SubmitBetProps{balance: number}
+
+export default function SubmitBet({balance}:SubmitBetProps)
+ {
+  const [betAmt, setAmt] = useState(0); 
   const updateInput = (event) => {
-    // "event.target.value is the value of what you're typing inside the input element"
-    // "setAmt() updates the state betAmt"
     setAmt(event.target.value);
   };
 
@@ -28,7 +23,6 @@ export default function SubmitBet() {
               type="number"
               placeholder="Enter Amount"
               value={betAmt === 0 ? "" : betAmt}
-              //   its an event listener and when you type something onChange activates whatever its directed to do, so activate updateInput
               onChange={updateInput}
             />
             <div className="bg-emerald-600 w-[2rem] flex justify-center items-center rounded-md">

@@ -54,7 +54,9 @@ export default function Home() {
       * show the balance of the user
       * submit bet button to submit the form
       */}
-      <SubmitBet />
+      <SubmitBet
+        balance = {300}
+      />
     </div>
   );
 }
