@@ -10,14 +10,7 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({playerName, betType, betStat, playerImage}) => {
 
-    // Betting player card
-    /*
-    Image of player summoner icon
-    Name
-    Current game i.e. solo/duo, flex, aram maybe??
-    Bet: KDA amount to be bet on
-    Less or More betting button
-    */
+
 
     return (
         <div className="relative p-10 bg-gray-700 text-white rounded shadow-md w-58 h-80 flex flex-col align-center justify-center flex-grow-0">

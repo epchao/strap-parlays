@@ -1,12 +1,6 @@
 import StatCardSection from "./_components/betSelection/StatCardSection";
 
-const statdata = [
-  {playerName: "beerman562", betType: "Kills", betStat: "5.5", playerImage: "https://pbs.twimg.com/media/F4uuyKAXEAE-GYF.jpg"},
-  {playerName: "beerman562", betType: "Assists", betStat: "7.5", playerImage: "https://pbs.twimg.com/media/F4uuyKAXEAE-GYF.jpg"},
-  {playerName: "beerman562", betType: "CS", betStat: "7", playerImage: "https://pbs.twimg.com/media/F4uuyKAXEAE-GYF.jpg"},
-  {playerName: "beerman562", betType: "Towers Killed", betStat: "2.5", playerImage: "https://pbs.twimg.com/media/F4uuyKAXEAE-GYF.jpg"},
-  {playerName: "beerman562", betType: "Deaths", betStat: "3.5", playerImage: "https://pbs.twimg.com/media/F4uuyKAXEAE-GYF.jpg"}
-];
+
 export default function Home() {
   return (
     <div className="flex justify-center">
@@ -54,7 +48,7 @@ export default function Home() {
 
 
       
-      <StatCardSection stats={statdata} />
+      <StatCardSection />
 
       {/* Submit Bet Section */}
       {/* Create a form that shows the following inputs
