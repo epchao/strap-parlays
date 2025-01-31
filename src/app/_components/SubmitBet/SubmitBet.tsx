@@ -8,7 +8,10 @@ interface SubmitBetProps {
 export default function SubmitBet({ balance }: SubmitBetProps) {
   const [betAmt, setAmt] = useState(0);
   const updateInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setAmt(parseInt(event.target.value));
+    const val = Number(event.target.value);
+    if (!isNaN(val)) {
+      setAmt(val);
+    }
   };
   return (
     <div className="bg-emerald-900 p-[1.5rem] rounded-lg flex flex-col max-w-[375px]">
@@ -19,10 +22,11 @@ export default function SubmitBet({ balance }: SubmitBetProps) {
         <div className="flex gap-[.5rem]">
           <input
             className="rounded-md pl-[1rem]"
-            type="number"
+            type="text"
             placeholder="Enter Amount"
             value={betAmt === 0 ? "" : betAmt}
             onChange={updateInput}
+            min="1"
           />
           <div className="bg-emerald-600 w-[2rem] flex justify-center items-center rounded-md">
             <p>2x</p>
