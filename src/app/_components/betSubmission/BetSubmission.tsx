@@ -1,11 +1,11 @@
 "use client";
-import { useState, ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 
-interface SubmitBetProps {
+interface BetSubmissionProps {
   balance: number;
 }
 
-export default function SubmitBet({ balance }: SubmitBetProps) {
+export default function BetSubmission({ balance }: BetSubmissionProps) {
   const [betAmt, setAmt] = useState(0);
   const updateInput = (event: ChangeEvent<HTMLInputElement>) => {
     const val = Number(event.target.value);
@@ -14,7 +14,7 @@ export default function SubmitBet({ balance }: SubmitBetProps) {
     }
   };
   return (
-    <div className="bg-emerald-900 p-[1.5rem] rounded-lg flex flex-col max-w-[375px]">
+    <div className="bg-emerald-900 p-[1.5rem] rounded-lg max-w-[375px]">
       <div>
         <p>Balance: ${balance}</p>
       </div>
