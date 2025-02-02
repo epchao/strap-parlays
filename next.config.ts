@@ -5,8 +5,20 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'pbs.twimg.com',
+        protocol: "https",
+        hostname: "pbs.twimg.com",
+      },
+      {
+        protocol: "https",
+        hostname: "static.bigbrain.gg",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn3.emoji.gg",
+      },
+      {
+        protocol: "https",
+        hostname: "ddragon.leagueoflegends.com",
       },
     ],
   },

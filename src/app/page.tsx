@@ -1,4 +1,5 @@
 import StatCardSection from "./_components/betSelection/StatCardSection";
+import PlayerDisplay from "./_components/playerDisplay/PlayerDisplay";
 import SubmitBet from "./_components/SubmitBet/SubmitBet";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       Game metadata
       */}
       {/* Player Card Section */}
+      <PlayerDisplay />
       {/* Only 3 cards in one row, descending afterwards and if i reduce my tab width all the way,
       it should conform to one card per row.
 
