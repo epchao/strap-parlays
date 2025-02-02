@@ -28,7 +28,6 @@ export default function Home() {
       Rank of player
       Game metadata
       */}
-      <PlayerDisplay />
       {/* Player Card Section */}
       {/* Only 3 cards in one row, descending afterwards and if i reduce my tab width all the way,
       it should conform to one card per row.

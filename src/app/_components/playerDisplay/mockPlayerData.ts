@@ -3,26 +3,28 @@ export interface Player {
   tag: string;
   icon?: string;
   level: number;
-  sdRank: string;
-  sdRankImage?: string;
-  fRank: string;
-  fRankImage?: string;
+  soloDuoRank: string;
+  soloDuoRankImage?: string;
+  flexRank: string;
+  flexRankImage?: string;
   champion: string;
   championImage?: string;
   avgKda: number;
   avgCs: number;
 }
 
-export const players: Player[] = [
+export const allies: Player[] = [
   {
     name: "beerman562",
     tag: "NA1",
     icon: "https://static.bigbrain.gg/assets/lol/riot_static/14.24.1/img/profileicon/1439.png",
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: "https://cdn3.emoji.gg/emojis/2370-lol-border9-challenger.png",
-    fRank: "Challenger",
-    fRankImage: "https://cdn3.emoji.gg/emojis/2370-lol-border9-challenger.png",
+    soloDuoRank: "Challenger",
+    soloDuoRankImage:
+      "https://cdn3.emoji.gg/emojis/2370-lol-border9-challenger.png",
+    flexRank: "Challenger",
+    flexRankImage:
+      "https://cdn3.emoji.gg/emojis/2370-lol-border9-challenger.png",
     champion: "Warwick",
     championImage:
       "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg",
@@ -34,10 +36,10 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Rumble",
     championImage: undefined,
     avgKda: 4.54,
@@ -48,10 +50,10 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Zed",
     championImage: undefined,
     avgKda: 1.74,
@@ -62,10 +64,10 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Vayne",
     championImage: undefined,
     avgKda: 3.89,
@@ -76,24 +78,27 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Soraka",
     championImage: undefined,
     avgKda: 1.3,
     avgCs: 6.7,
   },
+];
+
+export const enemies: Player[] = [
   {
     name: "SilentAssassin",
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Wukong",
     championImage: undefined,
     avgKda: 3.45,
@@ -104,10 +109,10 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Jayce",
     championImage: undefined,
     avgKda: 1.45,
@@ -118,10 +123,10 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Yasuo",
     championImage: undefined,
     avgKda: 3.63,
@@ -132,10 +137,10 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Xayah",
     championImage: undefined,
     avgKda: 4.45,
@@ -146,10 +151,10 @@ export const players: Player[] = [
     tag: "NA1",
     icon: undefined,
     level: 1000,
-    sdRank: "Challenger",
-    sdRankImage: undefined,
-    fRank: "Challenger",
-    fRankImage: undefined,
+    soloDuoRank: "Challenger",
+    soloDuoRankImage: undefined,
+    flexRank: "Challenger",
+    flexRankImage: undefined,
     champion: "Rakan",
     championImage: undefined,
     avgKda: 4.73,

@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Player, players } from "./mockPlayerData";
+import { Player, allies, enemies } from "./mockPlayerData";
 
 const PlayerDisplay: React.FC = () => {
   // Pretend call to API...
   const [time, setTime] = useState("00:00");
-  const currentPlayer: Player = players[0];
+  const currentPlayer: Player = allies[0];
   // Updates to game time state
   useEffect(() => {
     setTime("19:00");
@@ -34,10 +34,10 @@ const PlayerDisplay: React.FC = () => {
               <p className="lg:bg-gray-800 lg:w-full lg:p-4">Solo/Duo</p>
               <div className="lg:flex lg:flex-col lg:justify-center">
                 <img
-                  src={currentPlayer.sdRankImage}
+                  src={currentPlayer.soloDuoRank}
                   className="m-4 h-12 lg:h-16"
                 ></img>
-                <p>{currentPlayer.sdRank}</p>
+                <p>{currentPlayer.soloDuoRank}</p>
               </div>
             </div>
             <div className="bg-white h-28 w-[1px] lg:hidden"></div>
@@ -45,10 +45,10 @@ const PlayerDisplay: React.FC = () => {
               <p className="lg:bg-gray-800 lg:w-full lg:p-4">Flex</p>
               <div className="lg:flex lg:flex-col lg:justify-center">
                 <img
-                  src={currentPlayer.fRankImage}
+                  src={currentPlayer.flexRankImage}
                   className="m-4 h-12 lg:h-16"
                 ></img>
-                <p>{currentPlayer.fRank}</p>
+                <p>{currentPlayer.flexRank}</p>
               </div>
             </div>
           </div>
@@ -84,14 +84,14 @@ const PlayerDisplay: React.FC = () => {
               </thead>
               <tbody className="divide-y divide-gray-700">
                 {/* Populate table */}
-                {players.slice(0, 5).map((player, index) => {
+                {allies.map((player, index) => {
                   return (
                     <tr key={index}>
                       <td>{player.name}</td>
                       <td>{player.champion}</td>
                       <td>{player.avgKda.toFixed(2)}</td>
                       <td>{player.avgCs.toFixed(2)}</td>
-                      <td>{player.sdRank}</td>
+                      <td>{player.soloDuoRank}</td>
                     </tr>
                   );
                 })}
@@ -113,14 +113,14 @@ const PlayerDisplay: React.FC = () => {
               </thead>
               <tbody className="divide-y divide-gray-700">
                 {/* Populate table */}
-                {players.slice(5, 10).map((player, index) => {
+                {enemies.map((player, index) => {
                   return (
                     <tr key={index}>
                       <td>{player.name}</td>
                       <td>{player.champion}</td>
                       <td>{player.avgKda.toFixed(2)}</td>
                       <td>{player.avgCs.toFixed(2)}</td>
-                      <td>{player.sdRank}</td>
+                      <td>{player.soloDuoRank}</td>
                     </tr>
                   );
                 })}
