@@ -1,4 +1,6 @@
+import StatCardSection from "./_components/betSelection/StatCardSection";
 import SubmitBet from "./_components/SubmitBet/SubmitBet";
+
 
 export default function Home() {
   return (
@@ -17,7 +19,6 @@ export default function Home() {
 
       HARD CODE EVERYTHING FOR NOW.
       */}
-
 
       {/* Player display section */}
       {/* 
@@ -44,6 +45,7 @@ export default function Home() {
 
       When the user selects higher or lower, the button and border will turn green.
        */}
+      <StatCardSection />
 
       {/* Submit Bet Section */}
       {/* Create a form that shows the following inputs
