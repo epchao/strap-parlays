@@ -1,4 +1,5 @@
-import PlayerDisplay from "./_components/playerDisplay/PlayerDisplay";
+import StatCardSection from "./_components/betSelection/StatCardSection";
+import SubmitBet from "./_components/SubmitBet/SubmitBet";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
 
       When the user selects higher or lower, the button and border will turn green.
        */}
+      <StatCardSection />
 
       {/* Submit Bet Section */}
       {/* Create a form that shows the following inputs
@@ -53,6 +55,7 @@ export default function Home() {
        * show the balance of the user
        * submit bet button to submit the form
        */}
+      <SubmitBet balance={300} />
     </div>
   );
 }
