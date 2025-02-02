@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Player, allies, enemies } from "./mockPlayerData";
+import Image from "next/image";
 
 const PlayerDisplay: React.FC = () => {
   // Pretend call to API...
@@ -20,7 +21,13 @@ const PlayerDisplay: React.FC = () => {
         <section className="flex flex-col items-center bg-neutral-400 h-auto w-full rounded-3xl sm:flex-row sm:justify-evenly lg:flex-col lg:h-[40rem] lg:w-2/6">
           {/* Player icon */}
           <div className="flex items-center gap-2 p-4 lg:p-0 lg:pt-8">
-            <img src={currentPlayer.icon} className="h-16 rounded-lg"></img>
+            <Image
+              src={currentPlayer.icon as string}
+              alt="icon"
+              width={100}
+              height={100}
+              className="h-16 rounded-lg"
+            ></Image>
             <div className="flex flex-col">
               <p>
                 {currentPlayer.name} #{currentPlayer.tag}
@@ -33,10 +40,13 @@ const PlayerDisplay: React.FC = () => {
             <div className="text-xs sm:text-sm flex flex-col items-center lg:text-base lg:w-full">
               <p className="lg:bg-gray-800 lg:w-full lg:p-4">Solo/Duo</p>
               <div className="lg:flex lg:flex-col lg:justify-center">
-                <img
-                  src={currentPlayer.soloDuoRank}
+                <Image
+                  src={currentPlayer.soloDuoRankImage as string}
+                  alt="Rank"
+                  width={100}
+                  height={100}
                   className="m-4 h-12 lg:h-16"
-                ></img>
+                ></Image>
                 <p>{currentPlayer.soloDuoRank}</p>
               </div>
             </div>
@@ -44,10 +54,13 @@ const PlayerDisplay: React.FC = () => {
             <div className="text-xs sm:text-sm flex flex-col items-center lg:text-base lg:w-full">
               <p className="lg:bg-gray-800 lg:w-full lg:p-4">Flex</p>
               <div className="lg:flex lg:flex-col lg:justify-center">
-                <img
-                  src={currentPlayer.flexRankImage}
+                <Image
+                  src={currentPlayer.flexRankImage as string}
+                  alt="Rank"
+                  width={100}
+                  height={100}
                   className="m-4 h-12 lg:h-16"
-                ></img>
+                ></Image>
                 <p>{currentPlayer.flexRank}</p>
               </div>
             </div>
@@ -57,10 +70,13 @@ const PlayerDisplay: React.FC = () => {
         <section className="bg-neutral-400 rounded-3xl h-auto w-[100%] lg:h-[40rem] lg:w-4/6 lg:flex lg:flex-col">
           {/* Champ Image */}
           <div className="flex-1 h-24 lg:h-48">
-            <img
-              src={currentPlayer.championImage}
+            <Image
+              src={currentPlayer.championImage as string}
+              alt="Champion"
+              width={100}
+              height={100}
               className="object-cover h-full w-full rounded-t-3xl"
-            ></img>
+            ></Image>
           </div>
           {/* Game data */}
           <div className="flex-1 flex flex-col text-center text-xs lg:auto">

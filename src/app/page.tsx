@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="px-10 flex flex-col gap-5 justify-center items-center">
       <PlayerDisplay />
-      
+
       <BetSelection />
 
       <BetSubmission balance={300} />
