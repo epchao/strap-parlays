@@ -45,9 +45,6 @@ export default function Home() {
 
       When the user selects higher or lower, the button and border will turn green.
        */}
-
-
-      
       <StatCardSection />
 
       {/* Submit Bet Section */}
