@@ -1,4 +1,5 @@
 import StatCardSection from "./_components/betSelection/StatCardSection";
+import SubmitBet from "./_components/SubmitBet/SubmitBet";
 
 
 export default function Home() {
@@ -18,7 +19,6 @@ export default function Home() {
 
       HARD CODE EVERYTHING FOR NOW.
       */}
-      
 
       {/* Player display section */}
       {/* 
@@ -56,7 +56,9 @@ export default function Home() {
       * show the balance of the user
       * submit bet button to submit the form
       */}
-
+      <SubmitBet
+        balance = {300}
+      />
     </div>
   );
 }
